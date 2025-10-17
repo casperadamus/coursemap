@@ -1,0 +1,16 @@
+id,code,name,department,level,credits,days,times,location,lat,lng,instructor,description,seats_available,seats_total,type,parent_course
+1,CS 101,Introduction to Computer Science,CS,1000,3,"Mon,Wed","9:00 AM-10:30 AM",ITE Building Room 101,41.8075,-72.2527,Dr. Smith,Introduction to programming concepts,15,30,lecture,
+2,CS 101,Introduction to Computer Science,CS,1000,3,"Tue,Thu","11:00 AM-12:30 PM",ITE Building Room 102,41.8075,-72.2527,Dr. Smith,Introduction to programming concepts,12,25,lecture,
+3,CS 101L,Computer Science Lab,CS,1000,1,"Fri","2:00 PM-4:00 PM",ITE Lab 105,41.8075,-72.2527,TA Johnson,Programming lab session,20,25,lab,1
+4,MATH 101,Calculus I,MATH,1000,4,"Mon,Wed,Fri","10:00 AM-11:00 AM",Math Building 201,41.8065,-72.2532,Dr. Johnson,Differential calculus,20,35,lecture,
+5,MATH 101,Calculus I,MATH,1000,4,"Tue,Thu","1:00 PM-2:30 PM",Math Building 202,41.8065,-72.2532,Dr. Williams,Differential calculus,18,30,lecture,
+6,PHYS 101,General Physics,PHYS,1000,4,"Mon,Wed","1:00 PM-2:30 PM",Physics Building 101,41.8060,-72.2540,Dr. Brown,Mechanics and waves,22,40,lecture,
+7,PHYS 101L,Physics Lab,PHYS,1000,1,"Tue","9:00 AM-11:00 AM",Physics Lab 115,41.8060,-72.2540,Dr. Brown,Experimental physics,25,30,lab,6
+8,CHEM 101,General Chemistry,CHEM,1000,4,"Tue,Thu","10:00 AM-11:30 AM",Chemistry Building 201,41.8055,-72.2535,Dr. Davis,Chemical principles,15,32,lecture,
+9,CHEM 101L,Chemistry Lab,CHEM,1000,1,"Mon","1:00 PM-4:00 PM",Chemistry Lab 215,41.8055,-72.2535,Dr. Davis,Chemical experiments,28,32,lab,8
+10,ENG 101,Academic Writing,ENG,1000,3,"Mon,Wed","3:00 PM-4:30 PM",English Building 101,41.8080,-72.2520,Dr. Wilson,College writing skills,8,25,lecture,
+11,ENG 101,Academic Writing,ENG,1000,3,"Tue,Thu","9:00 AM-10:30 AM",English Building 102,41.8080,-72.2520,Dr. Wilson,College writing skills,10,20,lecture,
+12,HIST 101,World History,HIST,1000,3,"Mon,Wed,Fri","11:00 AM-12:00 PM",History Building 101,41.8070,-72.2515,Dr. Adams,Global history survey,25,40,lecture,
+13,PSY 101,Introduction to Psychology,PSY,1000,3,"Tue,Thu","2:00 PM-3:30 PM",Psychology Building 101,41.8068,-72.2510,Dr. Martinez,Psychology fundamentals,18,35,lecture,
+14,ART 101,Introduction to Drawing,ART,1000,3,"Mon,Wed","1:00 PM-3:30 PM",Art Building Studio A,41.8090,-72.2530,Prof. Garcia,Drawing fundamentals,12,20,lecture,
+15,MUS 101,Music Theory,MUS,1000,3,"Tue,Thu","10:00 AM-11:30 AM",Music Building 101,41.8085,-72.2525,Dr. Thompson,Music fundamentals,15,25,lecture,

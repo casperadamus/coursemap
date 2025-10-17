@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>University Schedule Builder</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
     <div class="container">
@@ -21,12 +20,6 @@
                     <div class="filter-options">
                         <select id="department">
                             <option value="">All Departments</option>
-                            <option value="CS">Computer Science</option>
-                            <option value="MATH">Mathematics</option>
-                            <option value="PHYS">Physics</option>
-                            <option value="CHEM">Chemistry</option>
-                            <option value="BIO">Biology</option>
-                            <option value="ENG">Engineering</option>
                         </select>
                         <select id="level">
                             <option value="">All Levels</option>
@@ -40,7 +33,9 @@
                 </div>
                 
                 <div class="course-list" id="courseList">
-                    <!-- Course items will be populated by JavaScript -->
+                    <div class="loading">
+                        <p>Loading courses...</p>
+                    </div>
                 </div>
                 
                 <div class="schedule-display">
@@ -53,24 +48,13 @@
                 <div class="action-buttons">
                     <button class="btn-primary" id="saveSchedule">Save Schedule</button>
                     <button class="btn-secondary" id="clearSchedule">Clear Schedule</button>
+                    <a href="map.html" class="btn-secondary">View Campus Map</a>
                 </div>
-            </div>
-            
-            <div class="map-container">
-                <div class="map-info">
-                    <h3>Campus Map</h3>
-                    <div class="class-info" id="classInfo">
-                        <p>Select a class to view its location</p>
-                    </div>
-                </div>
-                <div id="map"></div>
             </div>
         </div>
     </div>
 
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="js/courses.js"></script>
-    <script src="js/map.js"></script>
     <script src="js/schedule.js"></script>
     <script src="js/app.js"></script>
 </body>

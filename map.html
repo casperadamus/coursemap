@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Map - University Schedule Builder</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="./css/styles.css">
+    <style>
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+        .map-page-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 20px;
+        }
+        .map-container-full {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Campus Map</h1>
+            <p class="subtitle">View your class locations on campus</p>
+            <a href="index.html" class="btn-secondary back-button">← Back to Schedule Builder</a>
+        </header>
+        
+        <div class="map-page-container">
+            <div class="map-controls">
+                <div class="selected-courses">
+                    <h3>Your Classes</h3>
+                    <div id="courseListMap">
+                        <div class="no-courses">
+                            <p>No courses in your schedule.</p>
+                            <p>Go back to add courses.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="map-container-full">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="js/courses.js"></script>
+    <script src="js/schedule.js"></script>
+    <script src="js/map.js"></script>
+</body>
+</html>
