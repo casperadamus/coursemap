@@ -1,10 +1,10 @@
 // Main application
 const App = {
-    init: function() {
+    init: async function() {
         this.showLoading();
         
         // Initialize courses and schedule
-        CourseManager.init();
+        await CourseManager.init();
         ScheduleManager.loadFromStorage();
         
         // Setup the application

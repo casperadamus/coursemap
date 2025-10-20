@@ -3,9 +3,9 @@ const MapManager = {
     map: null,
     markers: [],
 
-    init: function() {
+    init: async function() {
         // Initialize courses and schedule
-        CourseManager.init();
+        await CourseManager.init();
         ScheduleManager.loadFromStorage();
         
         // Create map

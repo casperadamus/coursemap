@@ -1,223 +1,156 @@
 // Course data management
 const CourseManager = {
-    courses: [
-        {
-            id: 1,
-            code: "CS 101",
-            name: "Introduction to Computer Science",
-            department: "CS",
-            level: 1000,
-            credits: 3,
-            schedule: [
-                { day: "Mon", time: "9:00 AM - 10:30 AM", location: "ITE Building Room 101" },
-                { day: "Wed", time: "9:00 AM - 10:30 AM", location: "ITE Building Room 101" }
-            ],
-            location: { lat: 41.8075, lng: -72.2527 },
-            instructor: "Dr. Smith",
-            description: "Introduction to programming concepts",
-            seats: { available: 15, total: 30 },
-            type: "lecture",
-            parent_course: ""
-        },
-        {
-            id: 2,
-            code: "CS 101",
-            name: "Introduction to Computer Science",
-            department: "CS",
-            level: 1000,
-            credits: 3,
-            schedule: [
-                { day: "Tue", time: "11:00 AM - 12:30 PM", location: "ITE Building Room 102" },
-                { day: "Thu", time: "11:00 AM - 12:30 PM", location: "ITE Building Room 102" }
-            ],
-            location: { lat: 41.8075, lng: -72.2527 },
-            instructor: "Dr. Smith",
-            description: "Introduction to programming concepts",
-            seats: { available: 12, total: 25 },
-            type: "lecture",
-            parent_course: ""
-        },
-        {
-            id: 3,
-            code: "CS 101L",
-            name: "Computer Science Lab",
-            department: "CS",
-            level: 1000,
-            credits: 1,
-            schedule: [
-                { day: "Fri", time: "2:00 PM - 4:00 PM", location: "ITE Lab 105" }
-            ],
-            location: { lat: 41.8075, lng: -72.2527 },
-            instructor: "TA Johnson",
-            description: "Programming lab session",
-            seats: { available: 20, total: 25 },
-            type: "lab",
-            parent_course: "1"
-        },
-        {
-            id: 4,
-            code: "MATH 101",
-            name: "Calculus I",
-            department: "MATH",
-            level: 1000,
-            credits: 4,
-            schedule: [
-                { day: "Mon", time: "10:00 AM - 11:00 AM", location: "Math Building 201" },
-                { day: "Wed", time: "10:00 AM - 11:00 AM", location: "Math Building 201" },
-                { day: "Fri", time: "10:00 AM - 11:00 AM", location: "Math Building 201" }
-            ],
-            location: { lat: 41.8065, lng: -72.2532 },
-            instructor: "Dr. Johnson",
-            description: "Differential calculus",
-            seats: { available: 20, total: 35 },
-            type: "lecture",
-            parent_course: ""
-        },
-        {
-            id: 5,
-            code: "MATH 101",
-            name: "Calculus I",
-            department: "MATH",
-            level: 1000,
-            credits: 4,
-            schedule: [
-                { day: "Tue", time: "1:00 PM - 2:30 PM", location: "Math Building 202" },
-                { day: "Thu", time: "1:00 PM - 2:30 PM", location: "Math Building 202" }
-            ],
-            location: { lat: 41.8065, lng: -72.2532 },
-            instructor: "Dr. Williams",
-            description: "Differential calculus",
-            seats: { available: 18, total: 30 },
-            type: "lecture",
-            parent_course: ""
-        },
-        {
-            id: 6,
-            code: "PHYS 101",
-            name: "General Physics",
-            department: "PHYS",
-            level: 1000,
-            credits: 4,
-            schedule: [
-                { day: "Mon", time: "1:00 PM - 2:30 PM", location: "Physics Building 101" },
-                { day: "Wed", time: "1:00 PM - 2:30 PM", location: "Physics Building 101" }
-            ],
-            location: { lat: 41.8060, lng: -72.2540 },
-            instructor: "Dr. Brown",
-            description: "Mechanics and waves",
-            seats: { available: 22, total: 40 },
-            type: "lecture",
-            parent_course: ""
-        },
-        {
-            id: 7,
-            code: "PHYS 101L",
-            name: "Physics Lab",
-            department: "PHYS",
-            level: 1000,
-            credits: 1,
-            schedule: [
-                { day: "Tue", time: "9:00 AM - 11:00 AM", location: "Physics Lab 115" }
-            ],
-            location: { lat: 41.8060, lng: -72.2540 },
-            instructor: "Dr. Brown",
-            description: "Experimental physics",
-            seats: { available: 25, total: 30 },
-            type: "lab",
-            parent_course: "6"
-        },
-        {
-            id: 8,
-            code: "CHEM 101",
-            name: "General Chemistry",
-            department: "CHEM",
-            level: 1000,
-            credits: 4,
-            schedule: [
-                { day: "Tue", time: "10:00 AM - 11:30 AM", location: "Chemistry Building 201" },
-                { day: "Thu", time: "10:00 AM - 11:30 AM", location: "Chemistry Building 201" }
-            ],
-            location: { lat: 41.8055, lng: -72.2535 },
-            instructor: "Dr. Davis",
-            description: "Chemical principles",
-            seats: { available: 15, total: 32 },
-            type: "lecture",
-            parent_course: ""
-        },
-        {
-            id: 9,
-            code: "CHEM 101L",
-            name: "Chemistry Lab",
-            department: "CHEM",
-            level: 1000,
-            credits: 1,
-            schedule: [
-                { day: "Mon", time: "1:00 PM - 4:00 PM", location: "Chemistry Lab 215" }
-            ],
-            location: { lat: 41.8055, lng: -72.2535 },
-            instructor: "Dr. Davis",
-            description: "Chemical experiments",
-            seats: { available: 28, total: 32 },
-            type: "lab",
-            parent_course: "8"
-        },
-        {
-            id: 10,
-            code: "ENG 101",
-            name: "Academic Writing",
-            department: "ENG",
-            level: 1000,
-            credits: 3,
-            schedule: [
-                { day: "Mon", time: "3:00 PM - 4:30 PM", location: "English Building 101" },
-                { day: "Wed", time: "3:00 PM - 4:30 PM", location: "English Building 101" }
-            ],
-            location: { lat: 41.8080, lng: -72.2520 },
-            instructor: "Dr. Wilson",
-            description: "College writing skills",
-            seats: { available: 8, total: 25 },
-            type: "lecture",
-            parent_course: ""
-        }
-    ],
+    courses: [],
+    sectionsByParent: new Map(),
 
     init: function() {
-        console.log('Courses initialized:', this.courses.length);
-        return this.courses;
+        // Only initialize once
+        if (this._initPromise) return this._initPromise;
+        this._initPromise = this.loadCoursesFromCsv('./data/courses.csv').then(courses => {
+            this.courses = courses;
+            this.indexSectionsByParent();
+            console.log(`Loaded ${this.courses.length} courses from CSV`);
+        }).catch(err => {
+            console.error('Failed to load courses:', err);
+            this.courses = [];
+            this.sectionsByParent.clear();
+        });
+        return this._initPromise;
     },
 
-    filterCourses: function(department, level, search) {
-        let filtered = this.courses.filter(course => course.type === 'lecture');
-        
-        if (department) {
-            filtered = filtered.filter(course => course.department === department);
-        }
-        
-        if (level) {
-            filtered = filtered.filter(course => course.level.toString().startsWith(level));
-        }
-        
-        if (search) {
-            const searchLower = search.toLowerCase();
-            filtered = filtered.filter(course => 
-                course.code.toLowerCase().includes(searchLower) || 
-                course.name.toLowerCase().includes(searchLower)
-            );
-        }
-        
-        return filtered;
+    loadCoursesFromCsv: async function(path) {
+        const response = await fetch(path, { cache: 'no-cache' });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const text = await response.text();
+        return this.parseCsv(text);
     },
 
-    getCourseById: function(id) {
-        return this.courses.find(course => course.id === id);
+    parseCsv: function(text) {
+        // Simple CSV parser that handles quoted fields with commas
+        const lines = text.split(/\r?\n/).filter(l => l.trim().length > 0);
+        if (lines.length <= 1) return [];
+        const headers = this.splitCsvLine(lines[0]);
+        const records = [];
+        for (let i = 1; i < lines.length; i++) {
+            const cols = this.splitCsvLine(lines[i]);
+            if (cols.length === 0) continue;
+            const row = {};
+            headers.forEach((h, idx) => {
+                row[h] = cols[idx] !== undefined ? cols[idx] : '';
+            });
+            const course = this.mapRowToCourse(row);
+            records.push(course);
+        }
+        return records;
     },
 
-    getRelatedSections: function(lectureId) {
-        return this.courses.filter(course => course.parent_course === lectureId.toString());
+    splitCsvLine: function(line) {
+        const result = [];
+        let current = '';
+        let inQuotes = false;
+        for (let i = 0; i < line.length; i++) {
+            const ch = line[i];
+            if (ch === '"') {
+                if (inQuotes && line[i + 1] === '"') {
+                    current += '"';
+                    i++; // skip escaped quote
+                } else {
+                    inQuotes = !inQuotes;
+                }
+            } else if (ch === ',' && !inQuotes) {
+                result.push(current);
+                current = '';
+            } else {
+                current += ch;
+            }
+        }
+        result.push(current);
+        return result.map(s => s.trim());
+    },
+
+    mapRowToCourse: function(row) {
+        const id = parseInt(row.id, 10);
+        const credits = Number(row.credits) || 0;
+        const seatsAvailable = Number(row.seats_available) || 0;
+        const seatsTotal = Number(row.seats_total) || 0;
+        const lat = Number(row.lat) || 0;
+        const lng = Number(row.lng) || 0;
+
+        const days = row.days.replace(/^"|"$/g, '').split(',').map(d => d.trim()).filter(Boolean);
+        const timeRange = row.times.replace(/^"|"$/g, '');
+        const schedule = days.map(d => ({
+            day: this.normalizeDay(d),
+            time: this.normalizeTimeRange(timeRange),
+            location: row.location
+        }));
+
+        return {
+            id: id,
+            code: row.code,
+            name: row.name,
+            department: row.department,
+            level: String(row.level || ''),
+            credits: credits,
+            instructor: row.instructor,
+            description: row.description,
+            seats: { available: seatsAvailable, total: seatsTotal },
+            type: (row.type || 'lecture').toLowerCase(),
+            parentCourseId: row.parent_course ? parseInt(row.parent_course, 10) : null,
+            schedule: schedule,
+            location: { lat: lat, lng: lng }
+        };
+    },
+
+    normalizeDay: function(day) {
+        const map = { Mon: 'Mon', Tue: 'Tue', Wed: 'Wed', Thu: 'Thu', Fri: 'Fri', Sat: 'Sat', Sun: 'Sun' };
+        return map[day] || day;
+    },
+
+    normalizeTimeRange: function(range) {
+        // Convert formats like "9:00 AM-10:30 AM" to "9:00 AM - 10:30 AM"
+        return range.replace(/\s*-\s*/, ' - ');
+    },
+
+    indexSectionsByParent: function() {
+        this.sectionsByParent.clear();
+        this.courses.forEach(c => {
+            if (c.parentCourseId) {
+                const list = this.sectionsByParent.get(c.parentCourseId) || [];
+                list.push(c);
+                this.sectionsByParent.set(c.parentCourseId, list);
+            }
+        });
     },
 
     getDepartments: function() {
-        const departments = [...new Set(this.courses.map(course => course.department))];
-        return departments.sort();
+        const set = new Set(this.courses.map(c => c.department).filter(Boolean));
+        return Array.from(set).sort();
+    },
+
+    getCourseById: function(id) {
+        return this.courses.find(c => c.id === id) || null;
+    },
+
+    getRelatedSections: function(courseId) {
+        return this.sectionsByParent.get(courseId) || [];
+    },
+
+    filterCourses: function(department, level, searchTerm) {
+        const search = (searchTerm || '').toLowerCase().trim();
+        const selectedLevel = (level || '').trim();
+
+        // Only show top-level lectures in list; sections appear automatically when added
+        return this.courses.filter(c => {
+            if (c.type !== 'lecture') return false;
+            if (department && c.department !== department) return false;
+            if (selectedLevel && !String(c.level || '').startsWith(selectedLevel)) return false;
+            if (search) {
+                const hay = `${c.code} ${c.name} ${c.instructor} ${c.description}`.toLowerCase();
+                if (!hay.includes(search)) return false;
+            }
+            return true;
+        }).sort((a, b) => a.code.localeCompare(b.code));
     }
 };
+
+
